@@ -1,16 +1,17 @@
 #include "shell.h"
 
 /**
- * is_cmd - open program
- * @info: 1st entry
- * @path: 2nd entry
- * Return: Always (0)
+ * is_cmd - main function
+ * @info: struct stat st
+ * @path: path to file
+ * Return: Always 0
  */
+
 int is_cmd(info_t *info, char *path)
 {
-	struct stat st; /*Declaration of structure*/
+	struct stat st;
 
-	(void)info; /*Declaration*/
+	(void)info;
 	if (!path || stat(path, &st))  /*if condition*/
 		return (0);
 
