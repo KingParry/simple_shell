@@ -79,7 +79,7 @@ int read_history(info_t *info)
 	if (!buffy)
 		return (0);
 	redlenf = read(fudu, buffy, filxize);
-	buf[filxize] = 0;
+	buffy[filxize] = 0;
 	if (redlenf <= 0)
 		return (free(buffy), 0);
 	close(fudu);
@@ -138,5 +138,5 @@ int renumber_history(info_t *info)
 		node->numb = l++; /*incremental*/
 		node = node->next;
 	}
-	return (info->histcount = v);
+	return (info->histcount = l);
 }
